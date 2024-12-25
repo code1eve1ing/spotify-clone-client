@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/home/HomePage';
 import AuthCallbackPage from './pages/authCallback/AuthCallbackPage.tsx';
 import MainLayout from './layout/MainLayout.tsx';
+import AlbumPage from "./pages/album/AlbumPage";
 
 function App() {
 
@@ -17,18 +18,10 @@ function App() {
         <Route path='/auth-callback' element={<AuthCallbackPage />} />
         <Route element={<MainLayout />}>
 					<Route path='/' element={<HomePage />} />
+					{/* <Route path='/chat' element={<ChatPage />} /> */}
+					<Route path='/albums/:albumId' element={<AlbumPage />} />
 				</Route>
       </Routes>
-      {/* <header>
-      <SignedOut>
-        <SignInButton >
-            <Button className='m-6'>Sign in</Button>
-          </SignInButton>
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-    </header> */}
     </>
   )
 }
